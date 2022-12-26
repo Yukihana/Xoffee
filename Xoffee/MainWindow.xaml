@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Xoffee"
-        mc:Ignorable="d"
+        mc:Ignorable="d" Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         
@@ -17,13 +17,20 @@
         
         <!--StatusBar-->
         <StatusBar DockPanel.Dock="Bottom">
-            
+            <Slider Maximum="100" Minimum="0" Value="50" Width="100"/>
         </StatusBar>
         
         <!--Content-->
-        <Frame x:Name="ContentSpace" Background="#888">
-            
-        </Frame>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+            <Canvas>
+                <Canvas.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Canvas.RenderTransform>
+                <Frame x:Name="ContentSpace" Background="#888">
+    
+                </Frame>
+            </Canvas>
+        </ScrollViewer>
         
     </DockPanel>
 </Window>

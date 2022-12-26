@@ -11,19 +11,7 @@ namespace Xoffee;
 public partial class MainWindow : Window
 {
     public MainWindow()
-    {
-        InitializeComponent();
-    }
-
-    private void Go_Click(object sender, RoutedEventArgs e)
-    {
-        LoadThis(AddressText.Text);
-    }
-
-    private void Home_Click(object sender, RoutedEventArgs e)
-    {
-        LoadThis("./www/Home.xaml");
-    }
+        => InitializeComponent();
 
     private void LoadThis(string path)
     {
@@ -31,4 +19,13 @@ public partial class MainWindow : Window
         var page = XamlReader.Load(fs);
         ContentSpace.Content = page as Page;
     }
+
+    private void Go_Click(object sender, RoutedEventArgs e)
+        => LoadThis(AddressText.Text);
+
+    private void Home_Click(object sender, RoutedEventArgs e)
+        => LoadThis("./www/Home.xaml");
+
+    private void Window_Loaded(object sender, RoutedEventArgs e)
+        => Home_Click(sender, e);
 }
