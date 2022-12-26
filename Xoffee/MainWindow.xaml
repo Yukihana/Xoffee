@@ -1,0 +1,29 @@
+﻿<Window x:Class="Xoffee.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Xoffee"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        
+        <!--AddressBar-->
+        <DockPanel DockPanel.Dock="Top">
+            <Button DockPanel.Dock="Left" Content="Home" Click="Home_Click"/>
+            <Button DockPanel.Dock="Right" Content="Go" Click="Go_Click"/>
+            <TextBox x:Name="AddressText"/>
+        </DockPanel>
+        
+        <!--StatusBar-->
+        <StatusBar DockPanel.Dock="Bottom">
+            
+        </StatusBar>
+        
+        <!--Content-->
+        <Frame x:Name="ContentSpace" Background="#888">
+            
+        </Frame>
+        
+    </DockPanel>
+</Window>
